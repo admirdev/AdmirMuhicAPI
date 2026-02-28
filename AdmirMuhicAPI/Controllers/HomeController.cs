@@ -1,12 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AdmirMuhicAPI.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AdmirMuhicAPI.Controllers
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class HomeController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly AppDbContext _context;
+
+        public HomeController(AppDbContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetHomeInfo()
+        {
+            var info = await _context.Home.FirstOrDefaultAsync();
+
+            if (info == null)
+            {
+                return NotFound("Ingen data hittades i databasen.");
+            }
+
+            return Ok(info);
         }
     }
 }
