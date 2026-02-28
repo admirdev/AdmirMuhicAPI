@@ -1,0 +1,28 @@
+## Visual Studio mappar
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+## Kompileringsfiler (Build outputs)
+[Bb]in/
+[Oo]bj/
+
+## Lokala inställningar (Ska inte till GitHub)
+appsettings.Development.json
+appsettings.Local.json
+
+## Rider / JetBrains
+.idea/
+
+## VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+## Operativsystem-filer
+Thumbs.db
+Desktop.ini
+.DS_Store
