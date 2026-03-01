@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// TODO: Remove CORS policy in production and configure it properly for your frontend application
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("IgnoreCORS",
