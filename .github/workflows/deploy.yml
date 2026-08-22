@@ -32,5 +32,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy/
-          server-dir: /
-          dangerous-clean-slate: false
+          server-dir: /wwwroot/
