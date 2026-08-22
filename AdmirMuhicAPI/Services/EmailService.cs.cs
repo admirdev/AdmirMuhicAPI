@@ -25,7 +25,6 @@ public class EmailService : IEmailService
         email.To.Add(MailboxAddress.Parse(recipient));
 
         email.ReplyTo.Add(new MailboxAddress(message.Name, message.Email));
-
         email.Subject = $"Nytt kontaktmeddelande från {message.Name}";
 
         var bodyBuilder = new BodyBuilder
